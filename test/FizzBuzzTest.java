@@ -1,32 +1,35 @@
+import org.junit.Before;
 import org.junit.Test;
 
 import static org.junit.Assert.*;
 
 public class FizzBuzzTest {
 
+    private FizzBuzz test;
+
+    @Before
+    public void initObjects() {
+        test  = new FizzBuzz();
+    }
+
     @Test
     public void testFizz() {
-        FizzBuzz test  = new FizzBuzz();
-        String result = test.play(3);
-        assertEquals("Fizz", result);
+        assertEquals("Fizz", test.play(3));
     }
 
     @Test
     public void testBuzz() {
-        FizzBuzz anotherInstance  = new FizzBuzz();
-        assertEquals("Buzz", anotherInstance.play(5));
+        assertEquals("Buzz", test.play(5));
     }
 
     @Test
     public void testFizzBuzz() {
-        FizzBuzz yetAnotherInstance  = new FizzBuzz();
-        assertEquals("FizzBuzz", yetAnotherInstance.play(15));
+        assertEquals("FizzBuzz", test.play(15));
     }
 
     @Test
     public void testDefault() {
-        FizzBuzz defaultNumber = new FizzBuzz();
-        assertEquals("17", defaultNumber.play(17));
+        assertEquals("17", test.play(17));
     }
 
 
